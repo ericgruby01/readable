@@ -1,0 +1,226 @@
+[class*="--gradient"] {
+    position: relative;
+    border: 0;
+    color: $white;
+    &:hover {
+        color: $white;
+    }
+    span {
+        position: relative;
+        z-index: 1;
+    }
+    &:before {
+        @include elementShadow();
+        z-index: 0;
+    }
+}
+
+.bg-primary--gradient {
+    background-image: linear-gradient(to top right, $primary, $secondary);
+}
+
+$bg-complementary--gradient: linear-gradient(to top right, $complementary, $complementary2);
+.bg-complementary--gradient {
+    background-image: $bg-complementary--gradient !important;
+    &:before {
+        background-image: $bg-complementary--gradient !important;
+    }
+}
+
+$bg-secondary-complementary--gradient: linear-gradient(to top right, $primary, #cc82bb);
+.btn-secondary-complementary--gradient {
+    background-image: $bg-secondary-complementary--gradient;
+    &:before {
+        background-image: $bg-secondary-complementary--gradient;
+        opacity: 0.5;
+    }
+}
+
+$bg-secondary--gradient: linear-gradient(to top right, $secondary, change_color($secondary, 160, $green, 0));
+.btn-secondary--gradient {
+    background-image: $bg-secondary--gradient;
+    &:before {
+        background-image: $bg-secondary--gradient;
+        opacity: 0.5;
+    }
+}
+
+$bg-success-gradient: linear-gradient(to top right, $success, change_color($success, 160, $green, 0));
+.btn-success--gradient, .snackbar-container .action {
+    background-image: $bg-success-gradient !important;
+    &:before {
+        background-image: $bg-success-gradient !important;
+        opacity: 0.5 !important;
+    }
+}
+
+$bg-danger--gradient: linear-gradient(to top right, $danger, change_color($danger, 255, 110, 130));
+.btn-danger--gradient {
+    background-image: $bg-danger--gradient;
+    &:before {
+        background-image: $bg-danger--gradient;
+        opacity: 0.5;
+    }
+}
+
+.btn-success {
+    color: white;
+}
+
+.font-bold {
+    font-weight: 900;
+    font-size: 100%;
+}
+
+.z-index-1 {
+    z-index: 1;
+    position: relative;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Krub', sans-serif;
+    font-weight: 300;
+}
+
+img {
+    max-width: 100%;
+}
+
+code {
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    padding: 2px 3px 1px;
+    border-radius: $border-radius;
+}
+
+pre {
+    background: #eef3f6;
+    padding: 1em;
+    border-radius: $border-radius;
+    code {
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+        border-radius: 0;
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.flipX {
+    transform: scaleX(-1);
+}
+
+.box {
+    position: relative;
+    background-color: #ffffff;
+    padding: 1em;
+    border-radius: $border-radius;
+
+    &:before {
+        @include elementShadow();
+    }
+}
+
+blockquote {
+    margin: 0 0 1rem 1.5em;
+    border-left: 5px solid $secondary;
+    padding-left: 1.5em;
+}
+
+a {
+    &.active {
+        color: #5f9380;
+        &:before {
+            content: '»';
+            display: inline-block;
+            margin-right: 3px;
+        }
+    }
+}
+
+.input-query-holder {
+    position: relative;
+
+    .clear-query {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 38px;
+        height: 38px;
+        line-height: 38px;
+        text-align: center;
+    }
+}
+
+.snackbar-container .action {
+    color: white !important;
+    padding: 0.5em 1em !important;
+    border-radius: $border-radius;
+}
+
+.snackbar-container {
+    border-radius: $border-radius;
+    box-shadow: 0 5px 10px transparentize($primary, 0.5);
+}
+
+.fade-up-enter {
+    opacity: 0.01;
+    transform: translateY(20px);
+}
+
+.fade-up-enter-active {
+    opacity: 1;
+    transform-origin: center center;
+    transform: translateY(0);
+    transition: opacity 250ms ease-in, transform 250ms ease-in;
+}
+
+.fade-up-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-up-exit-active {
+    opacity: 0.01;
+    transform: translateY(20px);
+    transition: opacity 200ms ease-in, transform 200ms ease-in;
+}
+
+#to-top-btn {
+    @include floatingButton();
+    opacity: 0;
+    visibility: hidden;
+
+    @media (max-width: 991px) {
+        display: none;
+    }
+
+    @media (min-width: 992px) {
+        display: flex;
+    }
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+#mobile-menu-btn {
+    @include floatingButton();
+    @media (min-width: 992px) {
+        display: none;
+    }
+    @media (max-height: 480px) {
+        top: 30px !important;
+    }
+    &.close {
+        background-image: $bg-danger--gradient;
+        opacity: 1;
+    }
+}

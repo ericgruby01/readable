@@ -1,0 +1,27 @@
+@import "../general/variables";
+@import  "../general/mixins";
+@import "~bootstrap/scss/bootstrap";
+@import "../general/general";
+
+/* Components */
+@import "Sidebar";
+@import "Post";
+@import "Footer";
+@import "Comments";
+
+.App {
+    position: relative;
+    &:before{
+        display: none;
+    }
+}
+
+#app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#content {
+    flex-grow: 1
+}
