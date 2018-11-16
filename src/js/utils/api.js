@@ -2,7 +2,7 @@ import axios from 'axios';
 import { uniqid } from './GlobalHelpers';
 
 // Constants
-const API_URL = 'http://localhost:3001';
+const API_URL = process.env.NODE_ENV === 'production' ? 'https://appreadable.herokuapp.com' : 'http://localhost:3001';
 const AUTHTOKEN = uniqid('auth_');
 const AUTHORIZATION = window.localStorage.getItem('auth') === null ? AUTHTOKEN : window.localStorage.getItem('auth');
 

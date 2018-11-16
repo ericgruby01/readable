@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import 'resize-sensor';
 import StickySidebar from 'sticky-sidebar';
 
 // Components
