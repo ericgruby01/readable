@@ -1,6 +1,8 @@
 # Project - Readable
 This project was made for the React Nanodegree on [Udacity](https://udacity.com).
 
+[Demo here](http://readableapp.surge.sh/).
+
 ## Important
 
 This project depends on the 'api-server' directory, once it was modified to increment new features. So I will reference the directories as 'API directory' and 'Root directory'.
