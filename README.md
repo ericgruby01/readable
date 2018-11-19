@@ -1,7 +1,7 @@
 # Project - Readable
 This project was made for the React Nanodegree on [Udacity](https://udacity.com).
 
-[Demo here](http://readableapp.surge.sh/).
+[Demo here](https://readableapp.surge.sh/).
 
 ## Important
 
